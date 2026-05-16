@@ -1,8 +1,8 @@
 # ===================================
-# data_karyawan_program
+# Employee Inventory Application
 # ===================================
-# Developed by. Bayu Prasetya
-# JCDS - [Class Batch]
+# Developed by. Yoanita 
+# JCDS - [33]
 
 
 # /************************************/
