@@ -9,48 +9,49 @@ This project caters to the banking or financial industry, specifically addressin
 **Benefits:**
 * Improved data accuracy and consistency of employee training records
 * Streamlined employee training data management processes
-* Easier monitoring 
-* ... (List additional benefits relevant to the business)
+* Easier monitoring training requirement within department
+* Better tracking of employee competency compliance within the organization
+* Real time access to employee training history and status
+* Reduced risk of error of manual training record
+* Better coordination between Employee, HR Staff and Employee Manager
 
 **Target Users:**
 
-This application is designed for [Target Users] (e.g., sales representatives, inventory managers, customer support agents) within the organization to facilitate their [Tasks/Activities] related to [Data Entity].
+This application is designed for Employee, HR Department, Employee Manager within the organization to facilitate their employee skill and competencies related to training requirement.
 
 ## Features
 
 * **Create:**
-    * Add new [Data Entity] entries with essential details like [List relevant fields].
-    * Implement validation rules to ensure data integrity (if applicable, e.g., unique identifiers, data type checks).
+    * Add new training data entries with essential details like employee name, job title, department name, training name, training category, training date, training validity, training status.
+    * Implement validation rules to ensure data integrity (e.g uniqe employee ID).
 * **Read:**
-    * Search and retrieve specific [Data Entity] records by applying filters based on [Searchable fields].
-    * Display comprehensive information for each [Data Entity] in a user-friendly format.
+    * Search and retrieve specific employee training records by applying filters based unique employee ID.
+    * Display comprehensive information for each employee training data in a user-friendly format.
     * Integrate pagination and sorting capabilities for large datasets (if applicable).
 * **Update:**
-    * Modify existing [Data Entity] data to reflect changes in [Attributes/Properties].
+    * Modify existing employee training data to reflect changes in job title, department name, training name, training category, training date, training validity, training status.
     * Provide clear confirmation or error messages based on update success or failure.
 * **Delete:**
-    * Allow for the removal of unwanted [Data Entity] records with appropriate authorization checks (if applicable).
+    * Allow for the removal of unwanted employee training records with appropriate authorization checks (if applicable).
     * Implement soft delete functionality to prevent permanent data loss (optional, depending on business needs).
     * Consider offering data archiving capabilities (optional).
 * **Security:**
     * Implement user authentication and authorization mechanisms (if sensitive data is involved) to control access to different CRUD operations.
-    * ... (Specify additional security features as needed)
 * **Reporting:**
-    * Generate reports or summaries based on [Data Entity] data to support [Business Functions] (optional).
+    * Generate reports or summaries based on employee training data to support training monitoring (optional).
     * Export data in various formats (e.g., CSV, Excel) for further analysis (optional).
 
 ## Installation
 
 1. **Prerequisites:**
-    * Python version (specify the required version)
+    * Python version 3.7 or later
     * Additional dependencies (list any required packages)
 
 2. **Installation:**
     ```bash
-    git clone https://github.com/<your-username>/<your-repo-name>.git
+    git clone https://github.com/yoannitaa/employee_training_app.git
     cd <your-repo-name>
-    pip install -r requirements.txt  # If using a requirements.txt file
-    ```
+   ```
 
 3. **Database Setup (if applicable):**
     Follow specific instructions for configuring your database connection, aligning with the business's chosen database management system.
@@ -63,17 +64,23 @@ This application is designed for [Target Users] (e.g., sales representatives, in
     ```
 
 2. **CRUD Operations:**
-    * **Create:** Add a new [Data Entity] record, for example, a new customer in a customer management system, providing details like name, contact information, and preferences.
-    * **Read:** Search and retrieve customer information by name, ID, or other relevant criteria.
-    * **Update:** Modify customer details, such as updating their address or contact details.
+    * **Create:** Add a new employee training record, for example, a new training record, providing details like employee name, job title, department name, training name, training category, training date, training validity, training status.
+    * **Read:** Search and retrieve customer information by employee ID.
+    * **Update:** Modify customer details, such as updating their training name, job title, department name, training validity.
     * **Delete:** Remove a customer record from the system (with appropriate authorization, if applicable).
 
 ## Data Model
-This project utilizes a [Data Structure] (e.g., relational database, JSON documents) to represent [Data Entity] data. The following fields are typically stored:
-   * [Field 1]: (Data type) - Description of the field's purpose in the business context.
-   * [Field 2]: (Data type) - Description of the field's purpose in the business context.
-   * ... (List all relevant fields)
+This project utilizes a collection type database in Python to represent employee training data. The following fields are typically stored:
+   * emp_id: (String) - unique identifier for each employee.
+   * emp_name: (String) - employee name
+   * job_title: (String) - employee job title
+   * dept_name: (String) - employee department
+   * training_name: (String) - training name
+   * training_cat: (String) - training category (Sertifikasi or Non-Sertifikasi)
+   * training_date: (String) - date which employee took training
+   * training_valid: (Int) - training validity
+   * training_status: (String) - training status (Aktif or Expired)
 
 ## Contributing
-We welcome contributions to this project! Please feel free to open a pull request, sent to [your_email] or submit an issue if you encounter any problems or have suggestions for improvements.
+We welcome contributions to this project! Please feel free to open a pull request, sent to my email or submit an issue if you encounter any problems or have suggestions for improvements.
 
