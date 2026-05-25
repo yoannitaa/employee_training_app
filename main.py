@@ -22,6 +22,7 @@ inventory_training = [
 
 # /===== Feature Program =====/
 # Create your feature program here
+#function menu utama
 def main_menu():
     print("\n=== Inventory Training Karyawan Bank ABC ===\n")
     print("1. Report Data Training Karyawan")
@@ -32,6 +33,7 @@ def main_menu():
     input_mainmenu = input("Silahkan Pilih Menu Utama [1-5]: ")
     return input_mainmenu
 
+#function sub menu fitur READ
 def view_submenuread():
     print("\n~~~ Report Data Training Karyawan ~~~\n")
     print("1. Report Semua Data Training Karyawan")
@@ -40,6 +42,7 @@ def view_submenuread():
     input_sub_menuread = input("Silahkan Pilih Sub Menu Report Data [1-3]:" )
     return input_sub_menuread
 
+#function fitur READ, display employee training inventory data
 def read_training(data):
     if len(data) == 0:
        print("***Tidak Ada Data Training Karyawan***")
@@ -61,7 +64,7 @@ def read_training(data):
         training_status = tr["training_status"]
         print(f"{emp_id:<5} {emp_name:<8} {job_title:<30} {dept_name:<25} {training_name:<35} {training_cat:<16} {training_date:<10} {training_valid:<5} {training_status:<8}")
     
-
+#function validation key id 
 def search_training(search_NIP):
     search_result = []
     for tr in inventory_training:
@@ -73,6 +76,7 @@ def search_training(search_NIP):
     else:
        print("***Tidak Ada Data Training Karyawan***")
 
+#function sub menu fitur CREATE
 def view_submenucreate():
     print("\n~~~ Menambah Data Training Karyawan ~~~\n")
     print("1. Tambah Data Training Karyawan")
@@ -80,6 +84,7 @@ def view_submenucreate():
     input_sub_menucreate = input("Silahkan Pilih Sub Menu Create Data [1-2]:" )
     return input_sub_menucreate
 
+#function validation no dupkey fitur CREATE
 def cek_training(add_NIP):
     for tr in (inventory_training):
         emp_id = tr["emp_id"]
@@ -88,6 +93,7 @@ def cek_training(add_NIP):
             return True
     return False
 
+#function fitur CREATE
 def add_training(add_NIP, emp_name, job_title, dept_name, training_name, training_cat, training_date, training_valid, training_status):
 
     tr ={
@@ -114,6 +120,7 @@ def add_training(add_NIP, emp_name, job_title, dept_name, training_name, trainin
         else:
             print("Pilihan Salah, Masukkan Y/N")
 
+#function sub menu UPDATE 
 def view_submenuupdate():
     print("\n~~~ Mengubah Data Training Karyawan ~~~\n")
     print("1. Ubah Data Training Karyawan")
@@ -121,6 +128,7 @@ def view_submenuupdate():
     input_sub_menuupdate = input("Silahkan Pilih Sub Menu Update Data [1-2]:" )
     return input_sub_menuupdate
 
+#function fitur UPDATE
 def update_training(search_NIP):
     for tr in inventory_training:
         if search_NIP.lower() == tr["emp_id"].lower():
@@ -152,6 +160,7 @@ def update_training(search_NIP):
                 else:
                     print("Pilihan Salah, Masukkan Y/N")
 
+#function sub menu DELETE
 def view_submenudelete():
     print("\n~~~ Menghapus Data Training Karyawan ~~~\n")
     print("1. Hapus Data Training Karyawan")
@@ -159,6 +168,7 @@ def view_submenudelete():
     input_sub_menudelete = input("Silahkan Pilih Sub Menu Hapus Data [1-2]:" )
     return input_sub_menudelete
 
+#function fitur DELETE
 def delete_training(search_NIP):
     for tr in inventory_training:
         if search_NIP.lower() == tr["emp_id"].lower():
